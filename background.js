@@ -14,6 +14,12 @@ chrome.runtime.onInstalled.addListener(function() {
           }),
           new chrome.declarativeContent.PageStateMatcher({
             pageUrl: { hostEquals: 'gitlab.com' },
+          }),
+          new chrome.declarativeContent.PageStateMatcher({
+            pageUrl: { hostEquals: 'bitbucket.belastingdienst.nl' }
+          }),
+          new chrome.declarativeContent.PageStateMatcher({
+            pageUrl: { hostEquals: 'jira.belastingdienst.nl' }
           })
         ],
         actions: [ new chrome.declarativeContent.ShowPageAction() ]
@@ -41,6 +47,12 @@ chrome.pageAction.onClicked.addListener(tab => {
     case 'gitlab.com':
       uriHandle = handleOpenOrClone(url)
       break
+    case 'bitbucket.belastingdienst.nl':
+      uriHandle = handleBitbucket(url)
+      break
+      case 'jira.belastingdienst.nl':
+        uriHandle = handleJira(url)
+        break
     default:
   }
   if (uriHandle !== false) {
