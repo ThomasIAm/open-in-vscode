@@ -2,7 +2,7 @@
   "name": "Open in VS Code",
   "version": "0.7.0",
   "description": "Add a button to navigate from Github, Gitlab, Bitbucket and Jira to VS Code in a single click",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "author": "Thomas van den Nieuwenhoff",
   "homepage_url": "https://github.com/ThomasIAm/open-in-vscode",
   "page_action": {
@@ -14,7 +14,9 @@
     "default_title": "Open in VS Code"
   },
   "permissions": [
-    "declarativeContent",
+    "declarativeContent"
+  ],
+  "host_permissions": [
     "https://bitbucket.org/",
     "https://*.atlassian.net/",
     "https://github.com/",
